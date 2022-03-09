@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "Montserrat Bold";
+    src: url("/static/fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Terminus Bold";
+    src: url("/static/fonts/Terminus/Terminus-bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Terminus";
+    src: url("/static/fonts/Terminus/Terminus.ttf") format("truetype");
+}
+
+h1 {
+    font-family: "Terminus Bold", "Montserrat Bold", "serif";
+    font-size: 50px;
+}
+
+h2 {
+    font-family: "Terminus Bold", "Montserrat Bold", "serif";
+    font-size: 40px;
+}
+
+p {
+    font-family: "Terminus", inherit;
+    font-size: 25px;
+}

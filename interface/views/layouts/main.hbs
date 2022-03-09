@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Cytology master</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+        {{#each other_styles}}
+            <link rel="stylesheet" type="text/css" href="/static/css/{{this}}.css">
+        {{/each}}
+        {{#if use_menu}}
+            <link rel="stylesheet" type="text/css" href="/static/css/menu.css">
+        {{/if}}
+        {{#if use_awesome}}
+            <link rel="stylesheet" type="text/css" href="/static/fonts/Awesome/css/all.min.css">
+        {{/if}}
+    </head>
+    <body>
+        {{#if use_menu}}
+            {{>menu}}
+        {{/if}}
+        {{{body}}}
+
+        <footer>&copy;Cytology Master - 2022. GNU GPL v.3 licence. All rights reserved</footer>
+    </body>
+</html>

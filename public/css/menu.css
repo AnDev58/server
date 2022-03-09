@@ -1,0 +1,35 @@
+nav ul {
+    width: 150px;
+    list-style-type: none;
+}
+nav {
+    position: absolute;
+    right: 15px;
+    color: white;
+    font-size: 19px;
+}
+nav a {
+    color: inherit;
+}
+nav li a:hover, nav li.menu span:hover {
+    cursor: pointer;
+    text-shadow: black 0px 10px 5px;
+    color:grey;
+}
+li.menu > ul  {
+    text-align: left;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: white;
+    display: none;
+}
+li.menu > ul * {
+    text-align: center;
+    list-style-type: none;
+    background-color: inherit;
+    color: black;
+}
+li.menu > ul *::before {
+    content: "-> ";
+    color: grey;
+}
