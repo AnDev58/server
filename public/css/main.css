@@ -1,14 +1,20 @@
 @font-face {
     font-family: "Montserrat Regular";
-    src: url("/static/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+    src: url("http://localhost:5000/static/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Montserrat Italic";
-    src: url("/static/fonts/Montserrat/Montserrat-Italic.ttf") format("truetype");
+    src: url("http://localhost:5000/static/fonts/Montserrat/Montserrat-Italic.ttf") format("truetype");
 }
+
+@font-face {
+    font-family: "Terminus";
+    src: url("http://localhost:5000/static/fonts/Terminus/Terminus.ttf") format("truetype");
+}
+
 body {
-    background-image: url("/static/images/bg.jpg");
+    background-image: url("http://localhost:5000/static/images/bg.jpg");
     background-repeat: repeat-y;
     background-size: cover;
 }
@@ -26,4 +32,28 @@ h1 {
 }
 a {
     text-decoration: none;
+}
+.error * {
+    background-color: red;
+    border-radius: 20px;
+    border: 2px solid black;
+    font-family: 'Terminus';
+    text-align: center;
+    width: 100%;
+}
+.error h2 {
+    font-size: 30px;
+}
+.error h3 {
+    background-color: yellow;
+}
+.error span {
+    background-color: black;
+    color: red;
+
+}
+.error a {
+    background-color: inherit;
+    border: none;
+    text-align: justify;
 }

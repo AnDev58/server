@@ -1,10 +1,10 @@
 @font-face {
     font-family: "Lobster";
-    src: url("/static/fonts/Lobster/Lobster-Regular.ttf") format("truetype");
+    src: url("http://localhost:5000/static/fonts/Lobster/Lobster-Regular.ttf") format("truetype");
 }
 @font-face {
     font-family: "Montserrat Bold";
-    src: url("/static/fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+    src: url("http://localhost:5000/static/fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
 }
 h1 {
     font-family: "Lobster", "Montserrat Bold", "serif";
