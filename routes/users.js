@@ -1,9 +1,9 @@
 const express = require("express")
 const bodyParser = require("body-parser")
-const singup = require("../controllers/singup")
+// const singup = require("../controllers/singup")
 
-const jsonParser = bodyParser.urlencoded({extended: false})
+const jsonParser = bodyParser.json({extended: false})
 
 const router = express.Router()
-router.post("/singup", jsonParser, singup)
+// router.post("/singup", jsonParser, singup)
 module.exports = router
