@@ -2,12 +2,12 @@ const express = require("express")
 const User = require("../models/user")
 const dbo = require("../db/conn")
 
-module.exports = function(req, res) {
+module.exports = function(req, resp) {
     console.log(req.body)
     if(!req.body) return res.sendStatus(400)
     if(!req.body.name || !req.body.email || !req.body.passwd) return res.sendStatus(400)
-    if(!(/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(req.body.email))) return res.sendStatus(400)
-    if(!req.body.passwd.length !== undefined && req.body.passwd.length < 8) return res.sendStatus(400)
+    if(!(/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(req.body.email))) return resp.sendStatus(400)
+    if(!req.body.passwd.length !== undefined && req.body.passwd.length < 8) return resp.sendStatus(400)
     console.log("Ok")
     const user = new User(req.body.name, req.body.email, req.body.passwd)
     const db_client = dbo.getDb();
@@ -20,9 +20,10 @@ module.exports = function(req, res) {
                 db_client.collection("users").insertOne(user, function(err, res){
                     if(err) throw err
                     console.log("Ok")
-                    express.json(res)
+                    if(req.body.js) resp.send("Success")
+                    else express.json(res)
                 })
-            } else res.sendStatus(400)
+            } else resp.sendStatus(400)
         }
     })
 }

@@ -15,7 +15,11 @@ module.exports = function(req, res) {
         } else {
             if(usr !== null) { // Checking for null(username wasn't alredy taken)
                 const user = new User(usr.name, usr.email, req.body.passwd)
-                if(user.password === usr.password) express.json(usr)
+                if(user.password === usr.password) {
+                    console.log("Ok")
+                    if(req.body.js) res.send("Success")
+                    express.json(usr)
+                }
             } else res.sendStatus(400)
         }
     })
