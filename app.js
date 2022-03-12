@@ -1,15 +1,24 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const session = require("express-session")
 require("dotenv").config({ path: "./config.env" });
 const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
+app.set('trust proxy', 1)
 
 app.engine("hbs", require("express-handlebars").engine({
   layoutsDir: __dirname+"/interface/views/layouts",
   defaultLayout: "main",
   extname: "hbs"
+}))
+
+app.use(session({
+  secret: 'chafka',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
 }))
 
 app.set("view engine", "hbs");

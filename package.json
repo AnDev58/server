@@ -45,6 +45,7 @@
     "express": "^4.17.3",
     "express-handlebars": "^6.0.3",
     "express-session": "^1.17.2",
+    "express-sessions": "^1.0.6",
     "finalhandler": "^1.1.2",
     "foreachasync": "^3.0.0",
     "forwarded": "^0.2.0",
