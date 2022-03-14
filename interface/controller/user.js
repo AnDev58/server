@@ -9,7 +9,9 @@ exports.singup = function(request, response) {
 exports.dashboard = function(request, response){
     console.log(request.query)
     console.log(stack.get())
+    console.log(request.session)
     if(request.query && request.query.id && stack.id(request.query.id) !== -1) {
+        stack.remove(stack.id(request.query.id))
         request.session.uid = request.query.id
     }
     if(!request.session.uid) return response.sendStatus(401)

@@ -1,6 +1,7 @@
 const express = require("express")
 const User = require("../models/user")
 const dbo = require("../db/conn")
+const { stack } = require("../interface/models/online")
 
 module.exports = function(req, resp) {
     console.log(req.body)
@@ -19,8 +20,12 @@ module.exports = function(req, resp) {
             if(usr === null) { // Checking for null(username wasn't alredy taken)
                 db_client.collection("users").insertOne(user, function(err, res){
                     if(err) throw err
+                    console.log(res)
                     console.log("Ok")
-                    if(req.body.js) resp.send("Success")
+                    if(req.body.js) {
+                        stack.new(res.insertedId.toString())
+                        resp.redirect("/nojs/users?id="+res.insertedId)
+                    }
                     else express.json(res)
                 })
             } else resp.sendStatus(400)
