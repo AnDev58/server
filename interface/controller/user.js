@@ -11,9 +11,10 @@ exports.dashboard = function(request, response){
     console.log(stack.get())
     console.log(request.session)
     if(request.query && request.query.id && stack.id(request.query.id) !== -1) {
-        stack.remove(stack.id(request.query.id))
         request.session.uid = request.query.id
     }
     if(!request.session.uid) return response.sendStatus(401)
-    response.send(`Hello, user with id equals ${request.session.uid}!`)
+    response.render("dashboard.hbs", {
+        "info": "<p>Error 1000-7</p>"
+    })
 }

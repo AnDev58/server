@@ -1,0 +1,13 @@
+<h1>Welcome back, {{name}}!</h1>
+<div>
+    <h2>Your last posts (<a href="/posts/new">new</a>):</h2>
+    {{#each last_post as |post|}}
+        {{{post}}}
+    {{else}}
+        <p>No post found</p>
+    {{/each}}
+</div>
+<h2>Information (<a href="/users/edit">edit</a>):</h2>
+<div>
+    {{{info}}}
+</div>
