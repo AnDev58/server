@@ -16,7 +16,6 @@ app.engine("hbs", require("express-handlebars").engine({
 app.use(session({
   name: 'main',
   secret: 'chafka',
-  cookie: {maxAge: 1000},
   resave: false,
   saveUninitialized: true,
   unset: 'destroy'
