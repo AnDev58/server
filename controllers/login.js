@@ -14,6 +14,7 @@ module.exports = function(req, res) {
             return console.log(err)
         } else {
             if(usr !== null) { // Checking for null(username wasn't alredy taken)
+                console.log("Ok")
                 const user = new User(usr.name, usr.email, req.body.passwd)
                 if(user.password === usr.password) {
                     console.log("Ok")
@@ -22,7 +23,7 @@ module.exports = function(req, res) {
                         res.redirect("/nojs/users?id="+usr._id)
                     }
                     express.json(usr)
-                }
+                } else res.sendStatus(400)
             } else res.sendStatus(400)
         }
     })

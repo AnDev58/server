@@ -158,13 +158,16 @@
     "wrappy": "^1.0.2"
   },
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "clear && nodemon app.js",
+    "update": "git pull origin master && git pull upstream master",
+    "save": "git add . && git commit -am \"Save\" && git push origin master && git push upstream master",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cli-clear": "^1.0.4",
     "nodemon": "^2.0.15"
   }
 }
